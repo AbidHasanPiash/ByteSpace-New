@@ -8,6 +8,7 @@ export function Categories() {
       <div className="mx-auto max-w-[1234px] px-4 sm:px-6 xl:px-4">
         <SectionHeading
           size="s"
+          widthClassName="max-w-[925px]" // browser text runs ~0.3% wider than Figma; keeps the design's 2 lines
           title="Explore Diverse Learning Paths at Bytespace"
           description="At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of courses spans various fields, ensuring there's something for everyone. Unleash your potential and explore our carefully curated categories."
         />

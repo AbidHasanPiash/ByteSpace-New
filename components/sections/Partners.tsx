@@ -2,8 +2,8 @@ import { partnerLogos } from "@/data/home";
 
 export function Partners() {
   return (
-    <section aria-label="Our partners" className="bg-gray-50 py-12 lg:h-[202px] lg:py-0 lg:pt-20">
-      <ul className="mx-auto flex max-w-[1200px] flex-wrap items-end justify-center gap-x-10 gap-y-8 px-4 sm:px-6 lg:flex-nowrap lg:gap-[72px]">
+    <section aria-label="Our partners" className="bg-gray-50 py-12 xl:h-[202px] xl:py-0 xl:pt-20">
+      <ul className="mx-auto flex max-w-[1200px] flex-wrap items-end justify-center gap-x-10 gap-y-8 px-4 sm:px-6 xl:flex-nowrap xl:gap-[72px]">
         {partnerLogos.map((logo, i) => (
           <li key={logo.src} className="shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
