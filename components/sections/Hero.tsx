@@ -50,12 +50,10 @@ export function Hero() {
 function HeroVisual() {
   return (
     <div className="relative z-10 mx-auto mt-10 aspect-[578/512] w-[min(578px,calc(100%-32px))] [container-type:inline-size] sm:mt-14 xl:absolute xl:top-[512px] xl:left-1/2 xl:mt-0 xl:-translate-x-1/2">
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/hero-circle.svg"
-        alt=""
+      {/* Lime half-circle behind the student (1149px circle in the design) */}
+      <div
         aria-hidden="true"
-        className="absolute top-[12.11cqw] left-[-49.48cqw] w-[198.79cqw] max-w-none"
+        className="absolute top-[12.11cqw] left-[-49.48cqw] aspect-square w-[198.79cqw] rounded-full bg-lime-500"
       />
       <Image
         src="/images/student.png"

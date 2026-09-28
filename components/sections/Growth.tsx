@@ -6,6 +6,14 @@ import { Ornament } from "@/components/ui/Ornament";
 import { ScaledCanvas } from "@/components/ui/ScaledCanvas";
 import { courses, creatorPerks, growthStats } from "@/data/home";
 
+const growthBlobs = [
+  { src: "/images/blobs/lime.webp", left: -192, top: -506, size: 1217 },
+  { src: "/images/blobs/blue-b.webp", left: -548, top: 143, size: 1217 },
+  { src: "/images/blobs/blue-c.webp", left: 771, top: -498, size: 1217 },
+  { src: "/images/blobs/blue-a.webp", left: 682, top: 748, size: 1217 },
+  { src: "/images/blobs/lime-sm.webp", left: -327, top: 906, size: 752 },
+];
+
 const canvasScale = "[--s:.52] min-[400px]:[--s:.58] sm:[--s:.85] md:[--s:1]";
 const photoShadow =
   "drop-shadow-[51px_73px_72px_rgb(0_0_0/0.13)] drop-shadow-[17px_24px_24px_rgb(0_0_0/0.09)] drop-shadow-[2px_3px_6px_rgb(0_0_0/0.06)]";
@@ -14,21 +22,19 @@ const photoShadow =
 export function Growth() {
   return (
     <section id="creators" className="relative scroll-mt-10 overflow-hidden bg-snow py-20 xl:h-[1460px] xl:py-[120px]">
-      {/* Soft gradient blobs */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/blobs-growth.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[-506px] left-[calc(50%-1268px)] w-[2536px] max-w-none"
-      />
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src="/images/blob-lime-sm.svg"
-        alt=""
-        aria-hidden="true"
-        className="pointer-events-none absolute top-[906px] left-[calc(50%-1047px)] w-[752px] max-w-none"
-      />
+      {/* Soft gradient blobs (blurred renders from the design) */}
+      <div aria-hidden="true" className="pointer-events-none absolute top-0 left-1/2 h-full w-[1440px] -translate-x-1/2">
+        {growthBlobs.map((blob) => (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            key={blob.src + blob.left}
+            src={blob.src}
+            alt=""
+            className="absolute max-w-none"
+            style={{ left: blob.left, top: blob.top, width: blob.size, height: blob.size }}
+          />
+        ))}
+      </div>
 
       <div className="relative mx-auto flex max-w-[1232px] flex-col gap-20 px-4 sm:px-6 xl:gap-[72px] xl:px-4 xl:pl-[17px]">
         {/* Row 1 */}
