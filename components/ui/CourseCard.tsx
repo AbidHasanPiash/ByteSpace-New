@@ -36,7 +36,7 @@ export function CourseCard({ course, className, priority }: CourseCardProps) {
           sizes="(min-width: 1280px) 341px, (min-width: 768px) 45vw, 90vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-        <div className="absolute bottom-[15px] left-3 flex gap-3">
+        <div className="absolute right-3 bottom-[15px] left-3 flex gap-2 overflow-hidden sm:right-auto sm:gap-3">
           <MetaChip>{course.lessons} Lessons</MetaChip>
           <MetaChip>{course.duration}</MetaChip>
           <MetaChip>{course.comments} Comments</MetaChip>

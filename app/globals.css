@@ -178,6 +178,15 @@
   line-height: 1.2;
 }
 
+/* 120px guide grid drawn on the blue backgrounds (Hero, CTA, Auth pages). */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.25) 1px, transparent 1px);
+  background-size: 120px 120px;
+  background-position: calc(50% + 60px) 0;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

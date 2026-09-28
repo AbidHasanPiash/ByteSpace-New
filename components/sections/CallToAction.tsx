@@ -3,7 +3,7 @@ import { Ornament } from "@/components/ui/Ornament";
 
 export function CallToAction() {
   return (
-    <section className="relative overflow-hidden bg-blue-800 bg-[url(/images/grid-cta.svg)] bg-top bg-no-repeat lg:h-[488px]">
+    <section className="relative overflow-hidden bg-blue-800 bg-grid lg:h-[488px]">
       {/* Decorative shapes — exact Figma positions on a centred 1440px canvas */}
       <div aria-hidden="true" className="absolute top-0 left-1/2 hidden h-[488px] w-[1440px] -translate-x-1/2 lg:block">
         <Ornament src="/images/ornaments/coil-b.png" tint="lime" className="top-[-162px] left-[-118px] w-[385px]" />

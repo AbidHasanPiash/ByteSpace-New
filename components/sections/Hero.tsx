@@ -9,7 +9,7 @@ import { SearchBar } from "@/components/ui/SearchBar";
  */
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-blue-800 bg-[url(/images/grid-hero.svg)] bg-top bg-no-repeat xl:h-[1024px]">
+    <section className="relative overflow-hidden bg-blue-800 bg-grid xl:h-[1024px]">
       {/* Desktop ornaments (exact Figma positions) */}
       <div aria-hidden="true" className="absolute top-0 left-1/2 hidden h-[1024px] w-[1440px] -translate-x-1/2 lg:block">
         <Ornament src="/images/ornaments/coil-b.png" tint="lime" className="top-[221px] left-[-118px] w-[385px]" />
@@ -28,7 +28,7 @@ export function Hero() {
 
       <div className="relative z-10 mx-auto flex max-w-[1200px] flex-col items-center gap-10 px-4 pt-32 text-center sm:px-6 sm:gap-[60px] lg:pt-[169px]">
         <div className="flex flex-col items-center gap-6 sm:gap-8">
-          <h1 className="max-w-[935px] font-poppins text-[40px] leading-[1.2] font-semibold tracking-[-0.01em] text-white sm:text-[56px] lg:text-heading-l">
+          <h1 className="max-w-[935px] font-poppins text-[34px] leading-[1.2] font-semibold tracking-[-0.01em] text-white min-[400px]:text-[40px] sm:text-[56px] lg:text-heading-l">
             Get Access to Hundreds Courses Available
           </h1>
           <p className="max-w-[830px] text-body-m text-gray-100 sm:text-body-l">
