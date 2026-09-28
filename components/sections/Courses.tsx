@@ -48,7 +48,7 @@ export function Courses() {
           ))}
         </div>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:mt-[77px] lg:gap-10 xl:grid-cols-3">
+        <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:mt-[76px] lg:gap-10 xl:-ml-px xl:grid-cols-[repeat(3,375px)] xl:gap-[38px]">
           {courses.map((course) => (
             <CourseCard key={course.title} course={course} />
           ))}

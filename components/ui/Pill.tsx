@@ -10,7 +10,7 @@ export function Pill({ active, className, ...props }: PillProps) {
       type="button"
       aria-pressed={active}
       className={cn(
-        "rounded-3xl px-4 py-3 text-label-m whitespace-nowrap transition-colors duration-200",
+        "flex h-[43px] shrink-0 items-center rounded-3xl px-4 text-label-m whitespace-nowrap transition-colors duration-200",
         active ? "bg-lime-400 text-gray-950" : "bg-gray-50 text-gray-700 hover:bg-gray-100",
         className,
       )}
