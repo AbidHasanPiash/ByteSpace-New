@@ -31,9 +31,9 @@ export function AvatarStack({ avatars, count, size, countClassName }: AvatarStac
       ))}
       <span
         className={cn(
-          "relative flex shrink-0 items-center justify-center rounded-full bg-lime-400 text-gray-950",
+          "relative flex shrink-0 items-center justify-center rounded-full",
           s.text,
-          countClassName,
+          countClassName || "bg-lime-400 text-gray-950",
         )}
         style={{ width: s.px, height: s.px }}
       >

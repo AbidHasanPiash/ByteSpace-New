@@ -1,37 +1,45 @@
-/** "or" divider + social sign-in buttons. */
+/** "or" divider + social sign-in buttons (icons exported from the design). */
+const socials = [
+  {
+    label: "Continue with Facebook",
+    paths: [
+      "M36.667 20 C36.667 10.795 29.205 3.333 20 3.333 C10.795 3.333 3.333 10.795 3.333 20 C3.333 28.319 9.428 35.214 17.396 36.464 L17.396 24.818 L13.164 24.818 L13.164 20 L17.396 20 L17.396 16.328 C17.396 12.151 19.884 9.844 23.691 9.844 C25.515 9.844 27.422 10.169 27.422 10.169 L27.422 14.271 L25.32 14.271 C23.25 14.271 22.604 15.555 22.604 16.874 L22.604 20 L27.227 20 L26.488 24.818 L22.604 24.818 L22.604 36.464 C30.572 35.214 36.667 28.319 36.667 20",
+    ],
+  },
+  {
+    label: "Continue with Google",
+    paths: [
+      "M35.958 20.375 C35.958 19.278 35.861 18.236 35.695 17.222 L20 17.222 L20 23.486 L28.986 23.486 C28.583 25.542 27.403 27.278 25.653 28.458 L25.653 32.625 L31.014 32.625 C34.153 29.722 35.958 25.444 35.958 20.375",
+      "M20 9.93 C22.458 9.93 24.653 10.778 26.389 12.43 L31.139 7.68 C28.264 4.986 24.5 3.333 20 3.333 C13.486 3.333 7.861 7.083 5.125 12.528 L10.653 16.819 C11.972 12.861 15.653 9.93 20 9.93",
+      "M20 36.667 C13.486 36.667 7.861 32.917 5.125 27.472 L10.653 23.18 C11.972 27.139 15.653 30.069 20 30.069 C22.25 30.069 24.153 29.458 25.653 28.458 L31.014 32.625 C28.264 35.167 24.5 36.667 20 36.667 M10.653 16.819 L10.653 12.528 L5.125 12.528 L10.653 16.819",
+      "M5.125 23.18 L10.653 23.18 C10.306 22.18 10.125 21.111 10.125 20 C10.125 18.889 10.32 17.819 10.653 16.819 L5.125 12.528 C3.986 14.778 3.333 17.305 3.333 20 C3.333 22.694 3.986 25.222 5.125 27.472 L5.125 23.18 M10.653 23.18 L5.125 23.18 L5.125 27.472 L10.653 23.18",
+    ],
+  },
+];
+
 export function SocialLogin() {
   return (
     <div className="flex flex-col items-center gap-10">
-      <div className="flex w-full items-center gap-[11px]">
-        <span className="h-px flex-1 bg-gray-200" />
-        <span className="text-body-l text-gray-400">or</span>
-        <span className="h-px flex-1 bg-gray-200" />
+      <div className="flex w-full items-center gap-[11px] sm:w-auto sm:self-start">
+        <span className="h-px flex-1 bg-[#d1d1d1] sm:w-[200px] sm:flex-none" />
+        <span className="text-body-l text-[#888888]">or</span>
+        <span className="h-px flex-1 bg-[#d1d1d1] sm:w-[200px] sm:flex-none" />
       </div>
-      <div className="flex gap-4">
-        <button
-          type="button"
-          aria-label="Continue with Google"
-          className="flex size-[72px] items-center justify-center rounded-2xl border border-gray-200 bg-white transition-colors hover:bg-gray-50"
-        >
-          <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true">
-            <path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.4-.4-3.5z" />
-            <path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z" />
-            <path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z" />
-            <path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z" />
-          </svg>
-        </button>
-        <button
-          type="button"
-          aria-label="Continue with Apple"
-          className="flex size-[72px] items-center justify-center rounded-2xl border border-gray-200 bg-white transition-colors hover:bg-gray-50"
-        >
-          <svg width="40" height="40" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              fill="#000"
-              d="M16.37 12.73c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.78-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.76 2.28-1.6 2.78-.41 6.9 1.15 9.16.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.78.74 2.99.72 1.24-.02 2.02-1.12 2.77-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.39-.92-2.4-3.69zM14.1 5.97c.63-.77 1.06-1.83.94-2.89-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.06-.51 2.69-1.28z"
-            />
-          </svg>
-        </button>
+      <div className="flex gap-[14px]">
+        {socials.map((social) => (
+          <button
+            key={social.label}
+            type="button"
+            aria-label={social.label}
+            className="flex size-[74px] items-center justify-center rounded-3xl border border-[#d1d1d1] bg-white transition-colors hover:bg-gray-50"
+          >
+            <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+              {social.paths.map((d) => (
+                <path key={d} d={d} fill="#000" />
+              ))}
+            </svg>
+          </button>
+        ))}
       </div>
     </div>
   );

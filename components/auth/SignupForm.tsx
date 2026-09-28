@@ -33,7 +33,7 @@ export function SignupForm() {
     <div className="flex flex-col">
       <form onSubmit={onSubmit} noValidate className="flex flex-col gap-10">
         <AuthHeading eyebrow="Create an Account" title="Welcome to ByteSpace" />
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-[23px]">
           <TextField
             label="Full Name"
             autoComplete="name"
@@ -73,7 +73,7 @@ export function SignupForm() {
 
       <p className="mt-10 text-center text-body-l text-gray-700 xl:mt-[122px]">
         Already have an account?{" "}
-        <Link href="/login" className="font-medium text-blue-800 hover:underline">
+        <Link href="/login" className="text-blue-800 hover:underline">
           Login
         </Link>
       </p>
