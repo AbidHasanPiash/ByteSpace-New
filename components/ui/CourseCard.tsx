@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { AvatarStack } from "@/components/ui/AvatarStack";
 import { Icon } from "@/components/icons/Icon";
 import { learnerAvatars, type Course } from "@/data/home";
@@ -23,7 +24,7 @@ export function CourseCard({ course, className, priority }: CourseCardProps) {
   return (
     <article
       className={cn(
-        "group flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-[15px] pb-[21px] transition-shadow duration-300 hover:shadow-[0_12px_32px_rgb(0_0_0/0.08)]",
+        "group relative flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white p-4 pb-[20.8px] transition-shadow duration-300 hover:shadow-[0_12px_32px_rgb(0_0_0/0.08)]",
         className,
       )}
     >
@@ -43,16 +44,22 @@ export function CourseCard({ course, className, priority }: CourseCardProps) {
         </div>
       </div>
 
-      <div className="mt-[21px] flex items-start justify-between gap-2">
+      <div className="mt-5 flex items-start justify-between gap-2">
         <div className="min-w-0">
           <h3 className="truncate text-heading-xs text-black" title={course.title}>
-            {course.title}
+            {/* Stretched link: the whole card is clickable */}
+            <Link href={`/courses/${course.slug}`} className="after:absolute after:inset-0 after:rounded-3xl">
+              {course.title}
+            </Link>
           </h3>
-          <p className="text-body-xs text-black-700">
-            by <span className="text-blue-800">{course.author}</span>
+          <p className="font-satoshi text-xs leading-5 text-black-700">
+            by{" "}
+            <Link href="/creators/purepearl-studio" className="relative z-10 text-blue-800 hover:underline">
+              {course.author}
+            </Link>
           </p>
         </div>
-        <p className="mr-[3px] flex shrink-0 items-center text-body-l text-black-700">
+        <p className="mr-px flex shrink-0 items-center text-body-l text-black-700">
           {course.rating}&nbsp;
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/icons/fig-star-rate.svg" alt="" width={24} height={24} className="size-6" />

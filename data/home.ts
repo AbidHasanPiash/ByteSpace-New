@@ -2,8 +2,8 @@ import type { IconName } from "@/components/icons/Icon";
 
 export const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Courses", href: "#courses" },
-  { label: "Creators", href: "#creators" },
+  { label: "Courses", href: "/courses" },
+  { label: "Creators", href: "/creators/purepearl-studio" },
 ];
 
 export const studentAvatars = [
@@ -56,6 +56,7 @@ export const courseTopics = [
 export const courseTopicRows = [8, 6, 4];
 
 export type Course = {
+  slug: string;
   title: string;
   author: string;
   image: string;
@@ -64,6 +65,7 @@ export type Course = {
   comments: number;
   rating: number;
   level: string;
+  category: string;
   learners: number;
   price: number;
 };
@@ -80,17 +82,51 @@ const courseDefaults = {
 };
 
 export const courses: Course[] = [
-  { ...courseDefaults, title: "Learn Figma from Basic", image: "/images/courses/course-1.png" },
-  { ...courseDefaults, title: "Build Digital Asset", image: "/images/courses/course-2.png" },
-  { ...courseDefaults, title: "the Power of Big Data", image: "/images/courses/course-3.png" },
   {
     ...courseDefaults,
-    title: "Balancing Productivity and Self-Care",
-    image: "/images/courses/course-4.png",
+    slug: "learn-figma-from-basic",
+    title: "Learn Figma from Basic",
+    category: "Design",
+    image: "/images/courses/course-1.jpg",
   },
-  { ...courseDefaults, title: "Mastering Money Management", image: "/images/courses/course-5.png" },
-  { ...courseDefaults, title: "From Idea to Startup Success", image: "/images/courses/course-6.png" },
+  {
+    ...courseDefaults,
+    slug: "build-digital-asset",
+    title: "Build Digital Asset",
+    category: "Design",
+    image: "/images/courses/course-2.jpg",
+  },
+  {
+    ...courseDefaults,
+    slug: "the-power-of-big-data",
+    title: "the Power of Big Data",
+    category: "IT & Software",
+    image: "/images/courses/course-3.jpg",
+  },
+  {
+    ...courseDefaults,
+    slug: "balancing-productivity-and-self-care",
+    title: "Balancing Productivity and Self-Care",
+    category: "Business",
+    image: "/images/courses/course-4.jpg",
+  },
+  {
+    ...courseDefaults,
+    slug: "mastering-money-management",
+    title: "Mastering Money Management",
+    category: "Business",
+    image: "/images/courses/course-5.jpg",
+  },
+  {
+    ...courseDefaults,
+    slug: "from-idea-to-startup-success",
+    title: "From Idea to Startup Success",
+    category: "Marketing",
+    image: "/images/courses/course-6.jpg",
+  },
 ];
+
+export const getCourse = (slug: string) => courses.find((course) => course.slug === slug);
 
 export const categories: { label: string; icon: IconName }[] = [
   { label: "Design", icon: "design" },

@@ -1,15 +1,18 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/icons/Icon";
 
 export function SearchBar() {
+  const router = useRouter();
   const [query, setQuery] = useState("");
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    document.getElementById("courses")?.scrollIntoView({ behavior: "smooth" });
+    const q = query.trim();
+    router.push(q ? `/courses?q=${encodeURIComponent(q)}` : "/courses");
   };
 
   return (

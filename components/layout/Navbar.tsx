@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Icon } from "@/components/icons/Icon";
 import { Logo } from "@/components/ui/Logo";
@@ -10,6 +11,10 @@ import { cn } from "@/lib/cn";
 /** Transparent header that sits on top of the blue hero (120px tall on desktop). */
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  // "/courses/..." highlights Courses, "/creators/..." highlights Creators
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href.split("/").slice(0, 2).join("/"));
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -28,14 +33,14 @@ export function Navbar() {
 
         <nav aria-label="Main" className="absolute left-1/2 hidden -translate-x-[calc(50%+0.5px)] lg:block">
           <ul className="flex gap-6 text-gray-50">
-            {navLinks.map((link, i) => (
+            {navLinks.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  aria-current={i === 0 ? "page" : undefined}
+                  aria-current={isActive(link.href) ? "page" : undefined}
                   className={cn(
                     "transition-opacity hover:opacity-80",
-                    i === 0 ? "text-label-m" : "font-satoshi text-base leading-[1.6]",
+                    isActive(link.href) ? "text-label-m" : "font-satoshi text-base leading-[1.6]",
                   )}
                 >
                   {link.label}

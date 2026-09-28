@@ -4,7 +4,7 @@ import { categories } from "@/data/home";
 
 export function Categories() {
   return (
-    <section id="categories" className="scroll-mt-10 pt-16 pb-20 lg:pt-[72px] lg:pb-[120px]">
+    <section id="categories" className="scroll-mt-10 pt-16 pb-20 lg:pt-[71px] lg:pb-[120px]">
       <div className="mx-auto max-w-[1234px] px-4 sm:px-6 xl:px-4">
         <SectionHeading
           size="s"
