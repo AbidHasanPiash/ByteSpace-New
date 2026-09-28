@@ -16,14 +16,14 @@ export function TextField({ label, error, type = "text", className, ...props }: 
   const isPassword = type === "password";
 
   return (
-    <div className={cn("flex flex-col gap-2", className)}>
-      <label htmlFor={id} className="text-label-s text-gray-950">
+    <div className={cn("flex flex-col gap-[7px]", className)}>
+      <label htmlFor={id} className="text-label-s leading-[17px] text-gray-950">
         {label}
       </label>
       <div
         className={cn(
-          "flex h-[52px] items-center gap-2 rounded-3xl border bg-white px-6 transition-colors focus-within:border-blue-800",
-          error ? "border-red-500" : "border-gray-200",
+          "-mx-px flex h-[54px] items-center gap-2 rounded-xl border bg-white px-6 transition-colors focus-within:border-blue-800",
+          error ? "border-red-500" : "border-gray-100",
         )}
       >
         <input

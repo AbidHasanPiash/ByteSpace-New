@@ -5,7 +5,7 @@ import { cn } from "@/lib/cn";
 type Variant = "lime" | "blue" | "outline";
 
 const base =
-  "inline-flex shrink-0 items-center justify-center gap-2 rounded-3xl px-6 py-3 text-label-l whitespace-nowrap transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex shrink-0 items-center justify-center gap-2 rounded-3xl px-6 py-3 text-label-l leading-[22px] whitespace-nowrap transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   lime: "bg-lime-400 text-gray-950 hover:bg-lime-500 focus-visible:outline-lime-400",

@@ -33,7 +33,7 @@ export function LoginForm() {
     <div className="flex flex-col">
       <form onSubmit={onSubmit} noValidate className="flex flex-col gap-10">
         <AuthHeading eyebrow="Sign In" title="Welcome Back" />
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-[23px]">
           <TextField
             label="Email"
             type="email"
@@ -67,9 +67,9 @@ export function LoginForm() {
         <SocialLogin />
       </div>
 
-      <p className="mt-12 text-center xl:mt-[73px] text-body-l text-gray-700">
+      <p className="mt-12 text-center text-body-l text-[#888888] xl:mt-[73px]">
         New user?{" "}
-        <Link href="/signup" className="font-medium text-blue-800 hover:underline">
+        <Link href="/signup" className="text-blue-800 hover:underline">
           Create an account
         </Link>
       </p>

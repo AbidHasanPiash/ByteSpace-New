@@ -53,7 +53,7 @@ export function Growth() {
           </div>
 
           <ScaledCanvas width={621} height={552} scaleClassName={canvasScale}>
-            <CourseCard course={courses[0]} className="absolute top-0 left-0 h-[384px] w-[373px]" />
+            <CourseCard variant="feature" course={courses[0]} className="absolute -top-px -left-px h-[386px] w-[375px]" />
             <Image
               src="/images/student.png"
               alt="Student learning online with a laptop"
@@ -84,7 +84,7 @@ export function Growth() {
                 />
               </div>
             </div>
-            <HappyStudentsCard className="absolute top-[413px] left-[283px]" />
+            <HappyStudentsCard variant="feature" className="absolute top-[413px] left-[283px]" />
             <Ornament src="/images/ornaments/coil-b.png" tint="lime" className="top-[114px] left-[305px] w-[215px]" />
           </ScaledCanvas>
 

@@ -1,4 +1,5 @@
 import { AvatarStack } from "@/components/ui/AvatarStack";
+import { Icon } from "@/components/icons/Icon";
 import { studentAvatars } from "@/data/home";
 import { cn } from "@/lib/cn";
 
@@ -34,21 +35,46 @@ export function ProgressCard({ className }: CardProps) {
   );
 }
 
-/** "Happy Students 4.5 (240) ★" card with avatar stack. */
-export function HappyStudentsCard({ className }: CardProps) {
+/** "Happy Students 4.5 (240) ★" card with avatar stack. The lime tone is used on the auth pages. */
+type HappyStudentsCardProps = CardProps & {
+  /** "lime" background is used on the auth pages. */
+  tone?: "white" | "lime";
+  /** "feature" = Growth section / auth pages: 24px title line and a 10px bold rating. */
+  variant?: "hero" | "feature";
+};
+
+export function HappyStudentsCard({ tone = "white", variant = "hero", className }: HappyStudentsCardProps) {
+  const lime = tone === "lime";
+  const feature = variant === "feature";
   return (
-    <div className={cn(glass, "flex w-[258px] flex-col justify-center gap-2", className)}>
+    <div
+      className={cn(
+        "flex w-[258px] flex-col justify-center gap-2 rounded-2xl p-4 backdrop-blur-[10px]",
+        lime ? "bg-lime-400" : "bg-white",
+        className,
+      )}
+    >
       <div>
-        <p className="text-label-m text-gray-950">Happy Students</p>
+        <p className={cn("text-label-m text-gray-950", feature && "leading-6")}>Happy Students</p>
         <div className="flex items-center">
-          <p className="text-body-xs text-gray-400">
-            <span className="text-gray-950">4.5 </span>(240)
-          </p>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/icons/star-lime.svg" alt="" width={16} height={16} className="size-4 p-[1.1px_1.4px_2.3px]" />
+          {feature ? (
+            <p className="font-satoshi text-[10px] leading-[1.5] text-gray-400">
+              <span className="font-bold text-gray-950">4.5 </span>(240)
+            </p>
+          ) : (
+            <p className="text-body-xs text-gray-400">
+              <span className="text-gray-950">4.5 </span>(240)
+            </p>
+          )}
+          <Icon name="star" size={16} className={lime ? "text-blue-800" : "text-lime-400"} />
         </div>
       </div>
-      <AvatarStack avatars={studentAvatars} count="2K+" size="md" />
+      <AvatarStack
+        avatars={studentAvatars}
+        count="2K+"
+        size="md"
+        countClassName={lime ? "bg-gray-950 text-gray-50" : undefined}
+      />
     </div>
   );
 }
