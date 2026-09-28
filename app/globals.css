@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /*
- * Satoshi & Clash Display (Fontshare, free licence) are self-hosted from /public/fonts.
+ * Satoshi (Fontshare, free licence) is self-hosted from /public/fonts.
  */
 @font-face {
   font-family: "Satoshi";
@@ -24,17 +24,9 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
-  font-family: "Clash Display";
-  src: url("/fonts/ClashDisplay-Bold.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
 
 :root {
   --ff-satoshi: "Satoshi";
-  --ff-clash: "Clash Display";
 }
 
 /*
@@ -70,7 +62,6 @@
   /* Fonts (CSS variables are provided by next/font in the root layout) */
   --font-poppins: var(--ff-poppins), ui-sans-serif, system-ui, sans-serif;
   --font-satoshi: var(--ff-satoshi), ui-sans-serif, system-ui, sans-serif;
-  --font-clash: var(--ff-clash), var(--ff-poppins), ui-sans-serif, sans-serif;
 
   /* Effect "A" — layered card shadow */
   --shadow-a:

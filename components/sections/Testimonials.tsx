@@ -6,11 +6,11 @@ export function Testimonials() {
     <section className="relative overflow-hidden bg-snow py-20 lg:h-[784px] lg:pt-[74px] lg:pb-0">
       <div aria-hidden="true" className="pointer-events-none absolute top-0 left-1/2 h-full w-[1440px] -translate-x-1/2">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/blob-a.svg" alt="" className="absolute top-[-281px] left-[802px] w-[1217px] max-w-none" />
+        <img src="/images/blobs/lime.webp" alt="" className="absolute top-[-281px] left-[802px] size-[1217px] max-w-none" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/blob-lime-sm.svg" alt="" className="absolute top-[-178px] left-[355px] w-[752px] max-w-none" />
+        <img src="/images/blobs/lime-sm.webp" alt="" className="absolute top-[-178px] left-[355px] size-[752px] max-w-none" />
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/blob-b.svg" alt="" className="absolute top-[109px] left-[-482px] w-[1217px] max-w-none" />
+        <img src="/images/blobs/blue-a.webp" alt="" className="absolute top-[109px] left-[-482px] size-[1217px] max-w-none" />
       </div>
 
       <div className="relative mx-auto flex max-w-[1232px] flex-col gap-12 px-4 sm:px-6 lg:gap-[72px] xl:pr-4 xl:pl-[14px]">
