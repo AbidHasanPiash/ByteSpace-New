@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { cn } from "@/lib/cn";
 import { Logo } from "@/components/ui/Logo";
 import { NewsletterForm } from "@/components/ui/NewsletterForm";
 import { footerLinks, legalLinks } from "@/data/home";
 
-export function Footer() {
+export function Footer({ className }: { className?: string }) {
   return (
-    <footer className="border-t border-gray-200 bg-white">
+    <footer className={cn("border-t border-gray-200 bg-white", className)}>
       <div className="mx-auto flex max-w-[1232px] flex-col gap-16 px-4 pt-14 pb-8 sm:px-6 xl:h-[524px] xl:gap-[130px] xl:pt-[70px] xl:pb-0 xl:px-4">
         <div className="flex flex-col gap-12 xl:flex-row xl:gap-[92px]">
           <div className="flex flex-col gap-8 xl:gap-[45px]">
